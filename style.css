@@ -1,0 +1,39 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #696969;
+  color: #e0e0e0;
+  font-family: Helvetica, sans-serif
+}
+#header {
+  position: relative;
+  overflow: hidden;
+}
+h1 {
+  margin: 0 0 0 30px;
+  float: left;
+  padding: 0.25em 0;
+  font-size: 24pt;
+  position: relative;
+  left: 5px;
+}
+h2 {
+  margin: 0;
+  padding: 0.5em 30px;
+  font-size: 14pt;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+h2 a {
+  color: #e0e0e0;
+}
+p {
+  font-size: 12pt;
+  padding: 0.25em 0;
+  margin: 0 0 0 35px;
+  position relative;
+  left: 5px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>30 Years in Data</title>
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="xsection.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function () {
+        console.log('loading');
+        layout(eventData, typeData);
+        update(eventData, typeData);
+        addListeners(eventData, typeData);
+        window.addEventListener('resize', function () {
+          update(eventData, typeData);
+          drawSeasonIndicator(getContentWidth(), getContentHeight(eventData))
+          drawEvents(eventData, typeData);
+          updateListeners(eventData, typeData);
+        });
+      });
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+  </head>
+  <body>
+    <div id="header">
+      <h1>30 Years in Data</h1>
+      <h2>By <a href="http://elplatt.com/">Edward L. Platt</a> - <a href="http://github.com/elplatt/xsection">make your own</a></h2>
+    </div>
+    <svg width="960" height="720">
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:0.7" />
+          <stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:0.0" />
+        </linearGradient>
+      </defs>
+      <g class="top-axis"></g>
+      <g class="content">
+        <g class="bg"></g>
+      </g>
+      <g class="legend"></g>
+      <g class="listeners"></g>
+      <g class="bottom-axis"></g>
+    </svg>
+    <p id="narrative"></p>
+  </body>
+</html>
